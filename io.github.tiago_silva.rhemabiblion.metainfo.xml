@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.tiago_silva.rhemabiblion</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>RhemaBiblion</name>
+  <summary>Leitor bíblico moderno, exegese lexical e gerenciador de estudos</summary>
+  
+  <description>
+    <p>
+      O RhemaBiblion é uma estação de trabalho teológica moderna, ultra-rápida e focada em privacidade, desenvolvida com Rust e Tauri.
+    </p>
+    <p>Principais recursos:</p>
+    <ul>
+      <li>Exegese lexical e interlinear com léxicos Strong, Grego e Hebraico.</li>
+      <li>Guia de Passagem inteligente e dossiê teológico contextual.</li>
+      <li>Editor de estudos com suporte a Markdown, citações bíblicas automáticas e mapas conceituais (Excalidraw).</li>
+      <li>Apresentador de slides litúrgicos com controle remoto em tempo real.</li>
+      <li>Totalmente offline-first com sincronização opcional via nuvem.</li>
+    </ul>
+  </description>
+  
+  <launchable type="desktop-id">io.github.tiago_silva.rhemabiblion.desktop</launchable>
+  <url type="homepage">https://tiago-silva.github.io/rhemaBiblion-landing_page/</url>
+  <url type="help">https://tiago-silva.github.io/rhemaBiblion-landing_page/</url>
+
+  <developer id="io.github.tiago_silva">
+    <name>Tiago Silva</name>
+  </developer>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/Tiago-Silva/rhemaBiblion-landing_page/main/assets/img-01.png</image>
+      <caption>Área de trabalho do RhemaBiblion com Bíblias e Guia de Passagem</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/Tiago-Silva/rhemaBiblion-landing_page/main/assets/img-02.png</image>
+      <caption>Exegese Lexical e Estudo de Palavras da Bíblia</caption>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.6.0" date="2026-09-07">
+      <description>
+        <p>Lançamento oficial com suporte completo a exegese lexical, novos dicionários e integração com Flatpak.</p>
+      </description>
+    </release>
+  </releases>
+
+  <content_rating type="oars-1.1" />
+  
+  <provides>
+    <binary>rhemabiblion</binary>
+  </provides>
+</component>

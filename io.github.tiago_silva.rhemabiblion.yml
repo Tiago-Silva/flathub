@@ -1,0 +1,62 @@
+app-id: io.github.tiago_silva.rhemabiblion
+runtime: org.gnome.Platform
+runtime-version: '46'
+sdk: org.gnome.Sdk
+command: rhemabiblion
+
+finish-args:
+  # Servidor gráfico & Display
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --device=dri
+
+  # Conectividade (Download de módulos bíblicos e sync)
+  - --share=network
+
+  # Áudio e Notificações do SO
+  - --socket=pulseaudio
+  - --talk-name=org.freedesktop.Notifications
+
+  # Acesso a diretórios do usuário (estudos, exportações e backups)
+  - --filesystem=xdg-documents
+  - --filesystem=xdg-download
+
+modules:
+  - name: rhemabiblion
+    buildsystem: simple
+    build-commands:
+      # 1. Instalação do binário pré-compilado oficial
+      - install -Dm755 rhemabiblion /app/bin/rhemabiblion
+
+      # 2. Metadados e desktop entry
+      - install -Dm644 io.github.tiago_silva.rhemabiblion.metainfo.xml /app/share/metainfo/io.github.tiago_silva.rhemabiblion.metainfo.xml
+      - install -Dm644 io.github.tiago_silva.rhemabiblion.desktop /app/share/applications/io.github.tiago_silva.rhemabiblion.desktop
+
+      # 3. Conjunto de ícones em alta resolução
+      - install -Dm644 icon_32.png /app/share/icons/hicolor/32x32/apps/io.github.tiago_silva.rhemabiblion.png
+      - install -Dm644 icon_128.png /app/share/icons/hicolor/128x128/apps/io.github.tiago_silva.rhemabiblion.png
+      - install -Dm644 icon_256.png /app/share/icons/hicolor/256x256/apps/io.github.tiago_silva.rhemabiblion.png
+      - install -Dm644 icon_512.png /app/share/icons/hicolor/512x512/apps/io.github.tiago_silva.rhemabiblion.png
+
+    sources:
+      # Binário pré-compilado oficial Linux x86_64 extraído da release pública
+      - type: archive
+        url: https://github.com/Tiago-Silva/rhemaBiblion-landing_page/releases/download/v1.6.0/rhemabiblion-linux-x86_64.tar.gz
+        sha256: 036ea37a3a26050445d3e3391fe1650e5545ddd71aa9d261213b401a379aac0f
+      
+      # Metadados estáticos da aplicação
+      - type: file
+        path: io.github.tiago_silva.rhemabiblion.metainfo.xml
+      - type: file
+        path: io.github.tiago_silva.rhemabiblion.desktop
+
+      # Ícones empacotados
+      - type: file
+        path: icon_32.png
+      - type: file
+        path: icon_128.png
+      - type: file
+        path: icon_256.png
+      - type: file
+        path: icon_512.png

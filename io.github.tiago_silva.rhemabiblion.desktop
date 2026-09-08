@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=RhemaBiblion
+GenericName=Leitor e Gerenciador Bíblico
+Comment=Leitor e gerenciador bíblico moderno com ferramentas exegéticas e estudos
+Exec=rhemabiblion
+Icon=io.github.tiago_silva.rhemabiblion
+Terminal=false
+Type=Application
+Categories=Education;Spirituality;
+Keywords=bible;biblia;estudo;exegese;strong;teologia;
+StartupWMClass=rhemabiblion
+MimeType=x-scheme-handler/rhemabiblion;
