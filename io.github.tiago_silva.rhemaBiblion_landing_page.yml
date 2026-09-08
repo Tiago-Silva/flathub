@@ -1,0 +1,65 @@
+app-id: io.github.tiago_silva.rhemaBiblion_landing_page
+runtime: org.gnome.Platform
+runtime-version: '47'
+sdk: org.gnome.Sdk
+command: rhemabiblion
+
+finish-args:
+  # Servidor gráfico & Display
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --device=dri
+
+  # Conectividade (Download de módulos bíblicos e sync)
+  - --share=network
+
+  # Áudio e Notificações do SO
+  - --socket=pulseaudio
+  - --talk-name=org.freedesktop.Notifications
+
+  # Acesso a diretórios do usuário (estudos, exportações e backups)
+  - --filesystem=xdg-documents
+  - --filesystem=xdg-download
+
+modules:
+  - name: rhemabiblion
+    buildsystem: simple
+    build-commands:
+      # 1. Extração do conteúdo do pacote .deb oficial
+      - ar x app.deb
+      - tar -xf data.tar.*
+      - cp -r usr/* /app/
+      
+      # 2. Metadados e desktop entry padronizados com o App-ID
+      - install -Dm644 io.github.tiago_silva.rhemaBiblion_landing_page.metainfo.xml /app/share/metainfo/io.github.tiago_silva.rhemaBiblion_landing_page.metainfo.xml
+      - install -Dm644 io.github.tiago_silva.rhemaBiblion_landing_page.desktop /app/share/applications/io.github.tiago_silva.rhemaBiblion_landing_page.desktop
+
+      # 3. Conjunto de ícones em alta resolução
+      - install -Dm644 icon_32.png /app/share/icons/hicolor/32x32/apps/io.github.tiago_silva.rhemaBiblion_landing_page.png
+      - install -Dm644 icon_128.png /app/share/icons/hicolor/128x128/apps/io.github.tiago_silva.rhemaBiblion_landing_page.png
+      - install -Dm644 icon_256.png /app/share/icons/hicolor/256x256/apps/io.github.tiago_silva.rhemaBiblion_landing_page.png
+      - install -Dm644 icon_512.png /app/share/icons/hicolor/512x512/apps/io.github.tiago_silva.rhemaBiblion_landing_page.png
+
+    sources:
+      # Binário pré-compilado oficial Linux deb da release pública v1.6.0
+      - type: file
+        url: https://github.com/Tiago-Silva/rhemaBiblion-landing_page/releases/download/v1.6.0/rhemabiblion_1.6.0_amd64.deb
+        dest-filename: app.deb
+        sha256: 8f002c658addb2301d3974f1cc27c429f6ba5929fd8a80329d87a2efdeb2a7ad
+      
+      # Metadados estáticos da aplicação
+      - type: file
+        path: io.github.tiago_silva.rhemaBiblion_landing_page.metainfo.xml
+      - type: file
+        path: io.github.tiago_silva.rhemaBiblion_landing_page.desktop
+
+      # Ícones empacotados
+      - type: file
+        path: icon_32.png
+      - type: file
+        path: icon_128.png
+      - type: file
+        path: icon_256.png
+      - type: file
+        path: icon_512.png
