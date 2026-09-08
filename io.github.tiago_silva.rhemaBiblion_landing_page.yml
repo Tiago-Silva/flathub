@@ -44,7 +44,7 @@ modules:
     sources:
       # Binário pré-compilado oficial Linux deb da release pública v1.6.0
       - type: file
-        url: https://github.com/Tiago-Silva/rhemaBiblion-landing_page/releases/download/v1.6.0/rhemabiblion_1.6.0_amd64.deb
+        url: https://github.com/Tiago-Silva/rhemaBiblion_landing_page/releases/download/v1.6.0/rhemabiblion_1.6.0_amd64.deb
         dest-filename: app.deb
         sha256: 8f002c658addb2301d3974f1cc27c429f6ba5929fd8a80329d87a2efdeb2a7ad
       
