@@ -40,9 +40,9 @@
   </screenshots>
 
   <releases>
-    <release version="1.6.0" date="2026-09-07">
+    <release version="1.6.1" date="2026-09-07">
       <description>
-        <p>Lançamento oficial com suporte completo a exegese lexical, novos dicionários e integração com Flatpak.</p>
+        <p>Lançamento oficial com suporte completo a exegese lexical, Dicionário Bíblico Gemini e integração com Flatpak.</p>
       </description>
     </release>
   </releases>

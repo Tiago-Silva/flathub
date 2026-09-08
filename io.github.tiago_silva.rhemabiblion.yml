@@ -42,7 +42,7 @@ modules:
     sources:
       # Binário pré-compilado oficial Linux x86_64 extraído da release pública
       - type: archive
-        url: https://github.com/Tiago-Silva/rhemaBiblion-landing_page/releases/download/v1.6.0/rhemabiblion-linux-x86_64.tar.gz
+        url: https://github.com/Tiago-Silva/rhemaBiblion-landing_page/releases/download/v1.6.1/rhemabiblion-linux-x86_64.tar.gz
         sha256: 036ea37a3a26050445d3e3391fe1650e5545ddd71aa9d261213b401a379aac0f
       
       # Metadados estáticos da aplicação
