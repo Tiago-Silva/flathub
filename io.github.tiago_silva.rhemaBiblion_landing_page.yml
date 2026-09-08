@@ -1,6 +1,6 @@
 app-id: io.github.tiago_silva.rhemaBiblion_landing_page
 runtime: org.gnome.Platform
-runtime-version: '47'
+runtime-version: '50'
 sdk: org.gnome.Sdk
 command: rhemabiblion
 
